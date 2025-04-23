@@ -12,7 +12,6 @@ DB_PORT = 54158  # Add your port number here
 API_URL = "https://data.lacity.org/resource/2nrs-mtv8.json"
 ROWS_TO_FETCH = 100  # Total rows to fetch
 BATCH_SIZE = 100  # Number of rows per request
-offset = 100
 
 # Function to Fetch Data with Pagination
 def fetch_data():
