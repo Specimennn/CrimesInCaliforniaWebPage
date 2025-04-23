@@ -4,13 +4,15 @@ from datetime import datetime
 import time
 
 # Database Connection Config
-DB_HOST = "localhost"
-DB_NAME = "lacity"
+DB_HOST = "yamabiko.proxy.rlwy.net"
+DB_NAME = "railway"
 DB_USER = "postgres"
-DB_PASSWORD = "123456789"
+DB_PASSWORD = "vGWUpKCBzlYNSsNnaZxOpSSzIwcRBaPm"
+DB_PORT = 54158  # Add your port number here
 API_URL = "https://data.lacity.org/resource/2nrs-mtv8.json"
-ROWS_TO_FETCH = 10000  # Total rows to fetch
-BATCH_SIZE = 1000  # Number of rows per request
+ROWS_TO_FETCH = 100  # Total rows to fetch
+BATCH_SIZE = 100  # Number of rows per request
+offset = 100
 
 # Function to Fetch Data with Pagination
 def fetch_data():
@@ -51,7 +53,8 @@ def insert_data(data):
         host=DB_HOST,
         database=DB_NAME,
         user=DB_USER,
-        password=DB_PASSWORD
+        password=DB_PASSWORD,
+        port=DB_PORT  # Added port parameter here
     )
     cursor = conn.cursor()
 
