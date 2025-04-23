@@ -16,7 +16,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv("postgresql://postgres:vGWUpKCBzlYNSsNnaZxOpSSzIwcRBaPm@yamabiko.proxy.rlwy.net:54158/railway")
 
 @app.get("/all-crimes")
 def get_all_crime_data():
